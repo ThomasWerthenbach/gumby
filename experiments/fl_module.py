@@ -1,3 +1,4 @@
+import os
 import traceback
 
 from gumby.experiment import experiment_callback
@@ -28,7 +29,8 @@ class FederatedLearningModule(IPv8OverlayExperimentModule):
     @experiment_callback
     def assign_role(self, settings_file):
         try:
-            with open(settings_file) as f:
+            filename = os.path.join(os.path.dirname(__file__), settings_file)
+            with open(filename) as f:
                 settings = Settings.from_json("".join([x.strip() for x in f.readlines()]))
             self.overlay.log(settings.to_json())
             if self.my_id == 1:
