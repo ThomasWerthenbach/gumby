@@ -43,10 +43,3 @@ class FederatedLearningModule(IPv8OverlayExperimentModule):
             self.overlay.log(str(traceback.format_exc()))
         get_event_loop().run_forever()
 
-    def create_statistic(self, statistic_name, column_name=None):
-        with open('%s.txt' % statistic_name, 'w') as output_file:
-            output_file.write('time,pid,%s\n' % (column_name or statistic_name))
-
-    def add_point(self, statistic_name, value):
-        with open('%s.txt' % statistic_name, 'a') as output_file:
-            output_file.write("%f,%d,%d\n" % (time.time(), self.my_id, value))
