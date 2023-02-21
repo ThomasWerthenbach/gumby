@@ -3,5 +3,5 @@
   "learning_rate": 0.001,
   "model": "MNIST",
   "aggregator": "average",
-  "total_peers": 2
+  "total_peers": 10
 }

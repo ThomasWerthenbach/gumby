@@ -1,13 +1,14 @@
 import os
 import traceback
+from asyncio import get_event_loop
 
-from gumby.experiment import experiment_callback
-from gumby.modules.community_experiment_module import IPv8OverlayExperimentModule
-from gumby.modules.ipv8_community_launchers import IPv8CommunityLauncher
 from ipv8.loader import overlay
 
 from experiment_settings.settings import Settings
 from federated_learning.community import FLCommunity
+from gumby.experiment import experiment_callback
+from gumby.modules.community_experiment_module import IPv8OverlayExperimentModule
+from gumby.modules.ipv8_community_launchers import IPv8CommunityLauncher
 
 
 @overlay(FLCommunity)
@@ -34,8 +35,9 @@ class FederatedLearningModule(IPv8OverlayExperimentModule):
                 settings = Settings.from_json("".join([x.strip() for x in f.readlines()]))
             self.overlay.log(settings.to_json())
             if self.my_id == 1:
-                self.overlay.assign_server(settings)
+                self.overlay.assign_server(settings, self)
             else:
-                self.overlay.assign_node(self.my_id, self.get_peer('1'), settings)
+                self.overlay.assign_node(self.my_id, self.get_peer('1'), settings, self)
         except Exception as e:
             self.overlay.log(str(traceback.format_exc()))
+        get_event_loop().run_forever()
