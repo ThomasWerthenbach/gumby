@@ -1,7 +1,8 @@
 {
-  "non_iid": true,
-  "learning_rate": 0.001,
+  "non_iid": false,
+  "learning_rate": 0.01,
+  "momentum": 0.5,
   "model": "MNIST",
   "aggregator": "average",
-  "total_peers": 10
+  "total_peers": 30
 }
