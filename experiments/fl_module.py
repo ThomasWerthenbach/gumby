@@ -1,4 +1,5 @@
 import os
+import time
 import traceback
 from asyncio import get_event_loop
 
@@ -41,3 +42,11 @@ class FederatedLearningModule(IPv8OverlayExperimentModule):
         except Exception as e:
             self.overlay.log(str(traceback.format_exc()))
         get_event_loop().run_forever()
+
+    def autoplot_create(self, statistic_name, column_name=None):
+        with open('%s.csv' % statistic_name, 'w') as output_file:
+            output_file.write('time,pid,%s\n' % (column_name or statistic_name))
+
+    def autoplot_add_point(self, statistic_name, value):
+        with open('%s.csv' % statistic_name, 'a') as output_file:
+            output_file.write("%f,%d,%d\n" % (time.time(), self.my_id, value))
