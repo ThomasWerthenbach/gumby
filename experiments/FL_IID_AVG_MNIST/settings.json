@@ -4,5 +4,7 @@
   "momentum": 0.5,
   "model": "MNIST",
   "aggregator": "average",
-  "total_peers": 30
+  "epochs": 10,
+  "total_hosts": 50,
+  "peers_per_host": 5
 }

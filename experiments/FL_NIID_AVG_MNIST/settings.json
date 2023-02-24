@@ -1,0 +1,10 @@
+{
+  "non_iid": true,
+  "learning_rate": 0.01,
+  "momentum": 0.5,
+  "model": "MNIST",
+  "aggregator": "average",
+  "epochs": 10, 
+  "total_hosts": 50,
+  "peers_per_host": 5
+}

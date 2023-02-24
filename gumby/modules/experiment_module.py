@@ -60,7 +60,7 @@ class ExperimentModule(object):
         :returns: None
         """
         with open('autoplot/%s.csv' % statistic_name, 'a') as output_file:
-            output_file.write("%f,%d,%d\n" % (time.time(), self.my_id, value))
+            output_file.write("%f,%d,%f\n" % (time.time(), self.my_id, value))
 
     def on_id_received(self):
         """
