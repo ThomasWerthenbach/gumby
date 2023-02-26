@@ -16,7 +16,7 @@ class DecentralizedLearningCommunityLauncher(IPv8CommunityLauncher):
     pass
 
 
-class FederatedLearningModule(IPv8OverlayExperimentModule):
+class DecentralizedLearningModule(IPv8OverlayExperimentModule):
     """
     This module contains code to manage experiments with the Basalt community.
     """

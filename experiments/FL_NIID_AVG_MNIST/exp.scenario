@@ -6,5 +6,5 @@
 @0:1 annotate start-experiment
 @0:5 introduce_peers
 @0:10 assign_role FL_NIID_AVG_MNIST/settings.json
-@0:3590 stop_session
-@0:3600 stop
+@0:10795 stop_session
+@0:10800 stop

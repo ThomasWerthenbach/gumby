@@ -6,5 +6,6 @@
   "aggregator": "average",
   "epochs": 10, 
   "total_hosts": 50,
-  "peers_per_host": 5
+  "peers_per_host": 5,
+  "network_layout": "NA"
 }
