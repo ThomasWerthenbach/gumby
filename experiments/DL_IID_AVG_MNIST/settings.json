@@ -5,7 +5,7 @@
   "model": "MNIST",
   "aggregator": "average",
   "epochs": 10,
-  "total_hosts": 2,
-  "peers_per_host": 1,
-  "network_layout": "2"
+  "total_hosts": 20,
+  "peers_per_host": 5,
+  "network_layout": "100"
 }
