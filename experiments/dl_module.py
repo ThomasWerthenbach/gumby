@@ -4,8 +4,8 @@ from asyncio import get_event_loop
 
 from ipv8.loader import overlay
 
-from experiments.decentralized_learning.community import DLCommunity
-from experiments.experiment_settings.settings import Settings
+from experiment_infrastructure.decentralized_learning.community import DLCommunity
+from experiment_infrastructure.experiment_settings.settings import Settings
 from gumby.experiment import experiment_callback
 from gumby.modules.community_experiment_module import IPv8OverlayExperimentModule
 from gumby.modules.ipv8_community_launchers import IPv8CommunityLauncher
@@ -17,9 +17,6 @@ class DecentralizedLearningCommunityLauncher(IPv8CommunityLauncher):
 
 
 class DecentralizedLearningModule(IPv8OverlayExperimentModule):
-    """
-    This module contains code to manage experiments with the Basalt community.
-    """
     def __init__(self, experiment):
         super().__init__(experiment, DLCommunity)
 
