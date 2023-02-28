@@ -33,9 +33,6 @@ class FederatedLearningModule(IPv8OverlayExperimentModule):
             self.overlay.log(settings.to_json())
             if self.my_id == 1:
                 self.overlay.assign_server(settings, self)
-            elif self.my_id == settings.peers_per_host * settings.total_hosts and settings.sybil_amount > 0:
-                # In federated learning, the last node represents the sybil node and will produce many updates
-                self.overlay.assign_sybil(self.my_id, settings, self)
             else:
                 self.overlay.assign_node(self.my_id, self.get_peer('1'), settings, self)
         except Exception as e:
