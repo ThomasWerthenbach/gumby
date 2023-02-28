@@ -1,5 +1,5 @@
 {
-  "non_iid": false,
+  "non_iid": true,
   "learning_rate": 0.01,
   "momentum": 0.5,
   "model": "MNIST",
