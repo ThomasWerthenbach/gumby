@@ -8,6 +8,6 @@
   "total_hosts": 2,
   "peers_per_host": 5,
   "network_layout": "NA",
-  "sybil_amount": 100,
+  "sybil_amount": 20,
   "sybil_attack": "label_flip"
 }
