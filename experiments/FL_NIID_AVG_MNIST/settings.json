@@ -8,5 +8,6 @@
   "total_hosts": 20,
   "peers_per_host": 5,
   "network_layout": "NA",
-  "sybil_amount": 0
+  "sybil_amount": 0,
+  "sybil_attack": "NA"
 }

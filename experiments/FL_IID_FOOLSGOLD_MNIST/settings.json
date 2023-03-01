@@ -3,11 +3,11 @@
   "learning_rate": 0.01,
   "momentum": 0.5,
   "model": "MNIST",
-  "aggregator": "average",
+  "aggregator": "foolsgold",
   "epochs": 10,
   "total_hosts": 20,
   "peers_per_host": 5,
-  "network_layout": "100",
+  "network_layout": "NA",
   "sybil_amount": 0,
   "sybil_attack": "NA"
 }
