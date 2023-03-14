@@ -1,14 +1,14 @@
 {
-  "non_iid": false,
+  "non_iid": true,
   "learning_rate": 0.01,
   "momentum": 0.5,
   "model": "MNIST",
   "aggregator": "average",
   "epochs": 10,
-  "total_hosts": 20,
+  "total_hosts": 10,
   "peers_per_host": 5,
-  "network_layout": "NA",
-  "sybil_amount": 0,
-  "sybil_attack": false,
+  "network_layout": "100",
+  "sybil_amount": 50,
+  "sybil_attack": true,
   "sybil_attack_type": "label_flip"
 }

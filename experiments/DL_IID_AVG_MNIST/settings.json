@@ -9,5 +9,6 @@
   "peers_per_host": 5,
   "network_layout": "100",
   "sybil_amount": 0,
-  "sybil_attack": "NA"
+  "sybil_attack": false,
+  "sybil_attack_type": "NA"
 }

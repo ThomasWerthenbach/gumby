@@ -1,5 +1,5 @@
 {
-  "non_iid": false,
+  "non_iid": true,
   "learning_rate": 0.01,
   "momentum": 0.5,
   "model": "MNIST",
@@ -7,8 +7,8 @@
   "epochs": 10,
   "total_hosts": 20,
   "peers_per_host": 5,
-  "network_layout": "NA",
-  "sybil_amount": 0,
-  "sybil_attack": false,
-  "sybil_attack_type": "NA"
+  "network_layout": "100_sybil",
+  "sybil_amount": 99,
+  "sybil_attack": true,
+  "sybil_attack_type": "label_flip"
 }

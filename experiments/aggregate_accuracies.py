@@ -29,9 +29,9 @@ class AccuracyStatisticsParser(StatisticsParser):
         average = list()
         for i in range(min(list(map(lambda x: len(x), total_accuracies)))):
             s = 0
-            for j in range(100):
+            for j in range(len(total_accuracies)):
                 s += total_accuracies[j][i]
-            average.append(s / 100)
+            average.append(s / len(total_accuracies))
 
         with open("accuracies.csv", "w") as sum_id_file:
             for avg in average:
@@ -52,9 +52,9 @@ class AccuracyStatisticsParser(StatisticsParser):
         average = list()
         for i in range(min(list(map(lambda x: len(x), total_attack_rates)))):
             s = 0
-            for j in range(100):
+            for j in range(len(total_attack_rates)):
                 s += total_attack_rates[j][i]
-            average.append(s / 100)
+            average.append(s / len(total_attack_rates))
 
         with open("attack_rate.csv", "w") as sum_id_file:
             for avg in average:
