@@ -7,8 +7,8 @@
   "epochs": 10,
   "total_hosts": 20,
   "peers_per_host": 5,
-  "network_layout": "100_sybil",
-  "sybil_amount": 99,
+  "network_layout": "99_sybil",
+  "sybil_amount": 98,
   "sybil_attack": true,
   "sybil_attack_type": "label_flip"
 }
