@@ -5,10 +5,10 @@
   "model": "MNIST",
   "aggregator": "average",
   "epochs": 10,
-  "total_hosts": 1,
+  "total_hosts": 20,
   "peers_per_host": 5,
-  "network_layout": "4_sybil",
-  "sybil_amount": 3,
-  "sybil_attack": true,
+  "network_layout": "100",
+  "sybil_amount": 0,
+  "sybil_attack": false,
   "sybil_attack_type": "label_flip"
 }
