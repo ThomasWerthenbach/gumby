@@ -38,7 +38,6 @@ class AccuracyStatisticsParser(StatisticsParser):
                 sum_id_file.write(f"{avg}\n")
 
     def aggregate_peer_attack_rates(self):
-
         filename = os.path.join(os.path.dirname(__file__), sys.argv[2])
         with open(filename) as f:
             settings = json.loads("".join([x.strip() for x in f.readlines()]))
@@ -60,9 +59,38 @@ class AccuracyStatisticsParser(StatisticsParser):
             for avg in average:
                 sum_id_file.write(f"{avg}\n")
 
+    def aggregate_peer_round_times(self):
+        filename = os.path.join(os.path.dirname(__file__), sys.argv[2])
+        with open(filename) as f:
+            settings = json.loads("".join([x.strip() for x in f.readlines()]))
+
+        total_round_times = list()
+
+        for i in range(settings['peers_per_host']):
+            for _, filename, _ in self.yield_files(f'attack_rate_{i}.csv'):
+                total_round_times.append(list(pd.read_csv(filename)['time']))
+
+        average = list()
+        for i in range(min(list(map(lambda x: len(x), total_round_times)))):
+            s = 0
+            for j in range(len(total_round_times)):
+                s += total_round_times[j][i]
+            average.append(s / len(total_round_times))
+
+        if len(average) > 0:
+            first = average[0]
+            for i in range(len(average)):
+                average[i] -= first
+
+        with open("round_times.csv", "w") as sum_id_file:
+            for avg in average:
+                sum_id_file.write(f"{avg}\n")
+
+
     def run(self):
         self.aggregate_peer_accuracies()
         self.aggregate_peer_attack_rates()
+        self.aggregate_peer_round_times()
 
 
 # cd to the output directory
