@@ -1,10 +1,10 @@
 &module gumby.modules.base_ipv8_module.BaseIPv8Module
-&module experiments.dl_module.DecentralizedLearningModule
+&module experiments.cosine_similarity_module.CosineEvalModule
 
-@0:0 isolate_ipv8_overlay DLCommunity
+@0:0 isolate_ipv8_overlay CosineEvalCommunity
 @0:1 start_session
 @0:1 annotate start-experiment
 @0:5 introduce_peers
-@0:10 assign_role DL_IID_AVG_MNIST/settings.json
+@0:10 start_cosine_exec
 @0:295 stop_session
 @0:300 stop

@@ -32,7 +32,6 @@ class DecentralizedLearningModule(IPv8OverlayExperimentModule):
                 settings = Settings.from_json("".join([x.strip() for x in f.readlines()]))
             self.overlay.log(settings.to_json())
             self.overlay.assign_node(self.my_id, settings, self)
-            # todo support for sybils
         except Exception as e:
             self.overlay.log(str(traceback.format_exc()))
         get_event_loop().run_forever()
